@@ -8,7 +8,7 @@ LDLIBS =
 
 .PHONY: all
 all: $(SOURCES).o
-	$(CC) $(CXXFLAGS) $(INFLAGS) $(LDFLAGS) $(SOURCES).o $(LDLIBS) -o $(SOURCES).exe
+	$(CC) $(CXXFLAGS) $(INFLAGS) $(LDFLAGS) $<.o $(LDLIBS) -o $<.exe
 
 # Object files
 $(SOURCES).o: $(SOURCES).cpp
