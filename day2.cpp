@@ -2,8 +2,10 @@
 #include <iostream>
 #include <fstream>
 
+using std::string;
+
 int main(int argv, char* argc[]){
-    std::string inFileName;
+    string inFileName;
 
     inFileName = argc[1];
     
@@ -14,7 +16,15 @@ int main(int argv, char* argc[]){
         return 0;
     }
     
+    int depth = 0;
+    int position = 0;
     while(!inFile.eof()){
+        string direction;
+        int magnitude;
+
+        std::cin >> direction >> magnitude;
+
+        
     }
 
 
