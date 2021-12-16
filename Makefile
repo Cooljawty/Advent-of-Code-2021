@@ -7,12 +7,15 @@ LDFLAGS = -L./
 LDLIBS =
 
 .PHONY: all
-all: $(SOURCES).o
-	$(CC) $(CXXFLAGS) $(INFLAGS) $(LDFLAGS) $<.o $(LDLIBS) -o $<.exe
+all: $(SOURCES)
+#	$(CC) $(CXXFLAGS) $(INFLAGS) $(LDFLAGS) $<.o $(LDLIBS) -o $<.exe
 
 # Object files
-$(SOURCES).o: $(SOURCES).cpp
-	$(CC) -c $(CXXFLAGS) $(INFLAGS) $(LDFLAGS) $(LDLIBS) $< -o $@  
+#$(SOURCES).o: $(SOURCES).cpp
+#	$(CC) -c $(CXXFLAGS) $(INFLAGS) $(LDFLAGS) $(LDLIBS) $< -o $<.o  
+
+$(SOURCES): %: %.cpp
+	$(CC) $(CXXFLAGS) $(INFLAGS) $(LDFLAGS) -o $@ $<
 
 # clean by removing object files and executable.
 .PHONY: clean
