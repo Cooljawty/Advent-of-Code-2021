@@ -16,17 +16,32 @@ int main(int argv, char* argc[]){
         return 0;
     }
     
+    int aim = 0;
     int depth = 0;
     int position = 0;
     while(!inFile.eof()){
         string direction;
         int magnitude;
 
-        std::cin >> direction >> magnitude;
+        inFile >> direction >> magnitude;
 
+        if(!inFile.is_open())
+            break;
+
+        if(direction == "down"){
+            aim += magnitude;
+        }
+        if(direction == "up"){
+            aim -= magnitude;
+        }
+        if(direction == "forward"){
+            position += magnitude;
+            depth += magnitude * aim;
+        }
         
     }
 
+    std::cout << depth * position << std::endl;
 
     inFile.close();
     return 0;
