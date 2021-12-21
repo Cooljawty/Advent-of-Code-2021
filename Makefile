@@ -1,6 +1,6 @@
 # Standard make file
 CC	= g++
-SOURCES = day1 day2
+SOURCES = day1 day2 day3
 CXXFLAGS = -Wall -pedantic -Wextra -std=c++11 -g
 INFLAGS = -I./include
 LDFLAGS = -L./
